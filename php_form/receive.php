@@ -9,6 +9,15 @@ echo $method;
 // Hint: use the null coalescing operator ?? to provide an empty-string default.
 $name = '';
 
+$name = '';
+if ($method === 'GET') {
+$name = $_GET['displayName'] ?? '';
+} elseif ($method === 'POST') {
+$name = $_POST['displayName'] ?? '';
+}
+
+$name = trim($name);
+
 // TODO 3: Remove spaces at the beginning/end using trim().
 
 // This prevents the browser from interpreting the submitted value as HTML.
